@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: #E0F7FA;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            background-image: url('path-to-cinnamoroll-image.jpg');
+            background-size: cover;
+            height: 200px;
+            text-align: center;
+            color: white;
+            padding: 50px 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #FF69B4;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label,
+        input,
+        button {
+            margin: 10px 0;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #FFB6C1;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #FF69B4;
+            transform: scale(1.1);
+        }
+
+        button:active {
+            background-color: #FF1493;
+            transform: scale(0.9);
+        }
+
+        .password-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 2px solid #FFB6C1;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .image-container img {
+            width: 150px;
+            margin-bottom: -48px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <!-- Header content if needed -->
+</header>
+
+<div class="image-container">
+    <img src="cinna-removebg-preview.png" alt="Cinnamoroll Image">
+</div>
+
+<main>
+    <section class="password-container">
+        <h2>Enter Password</h2>
+        <form id="loginForm" action="send_email.php" method="POST">
+            <label for="name">Anything Here (I'll read)</label>
+            <input type="text" id="name" name="name" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Okkkii</button>
+            <p id="error-message" class="error-message"></p>
+        </form>
+    </section>
+</main>
+
+<script>
+    function validatePassword(event) {
+        const password = document.getElementById('password').value;
+        const errorMessageElement = document.getElementById('error-message');
+        if (password !== 'behappy') {
+            event.preventDefault();
+            errorMessageElement.textContent = 'You will get the pass soon !!';
+        }
+    }
+    window.addEventListener('load', function() {
+        document.getElementById('loginForm').addEventListener('submit', validatePassword);
+    });
+</script>
+
+</body>
+
+</html>
